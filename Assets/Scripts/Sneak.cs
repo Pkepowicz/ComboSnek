@@ -39,7 +39,7 @@ public class Sneak : MonoBehaviour
 
     private void FixedUpdate()
     {
-        for(int i = segments.Count; i < segments.Count - 1; i--)
+        for(int i = segments.Count - 1; i > 0; i--)
         {
             segments[i].position = segments[i - 1].position;
         }
