@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sneak : MonoBehaviour
+public class Snek : MonoBehaviour
 {
     public Renderer rend;
 
@@ -58,12 +58,23 @@ public class Sneak : MonoBehaviour
         {
             Grow();
         }
+        if (collision.tag == "Obstacle")
+        {
+            GameOver();
+        }
     }
 
     private void Grow()
     {
         Transform segment = Instantiate(segmentPrefab);
         segment.position = segments[segments.Count - 1].position;
+        segment.localScale = transform.lossyScale;
         segments.Add(segment);  
+    }
+
+    private void GameOver()
+    {
+        transform.position = new Vector3(-100, -100, -100);
+        Time.timeScale = 0;
     }
 }
