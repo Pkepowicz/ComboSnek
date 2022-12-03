@@ -77,4 +77,24 @@ public class Snek : MonoBehaviour
         transform.position = new Vector3(-100, -100, -100);
         Time.timeScale = 0;
     }
+
+    public void Up()
+    {
+
+    }
+
+    public void Down()
+    {
+
+    }    
+
+    public void Left()
+    {
+
+    }
+
+    public void Right()
+    {
+
+    }
 }
