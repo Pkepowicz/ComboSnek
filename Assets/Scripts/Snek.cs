@@ -5,8 +5,9 @@ using UnityEngine;
 public class Snek : MonoBehaviour
 {
     public Renderer rend;
-
+    
     private Vector3 direction = Vector2.up;
+    private Vector3 desired = Vector2.up;
     private List<Transform> segments;
     public Transform segmentPrefab;
 
@@ -44,6 +45,7 @@ public class Snek : MonoBehaviour
             segments[i].position = segments[i - 1].position;
         }
 
+        direction = desired;
         Move();
     }
 
@@ -80,21 +82,21 @@ public class Snek : MonoBehaviour
 
     public void Up()
     {
-
+        if (direction != Vector3.down) desired = Vector2.up;
     }
 
     public void Down()
     {
-
+        if (direction != Vector3.up) desired = Vector2.down;
     }    
 
     public void Left()
     {
-
+        if (direction != Vector3.right) desired = Vector2.left;
     }
 
     public void Right()
     {
-
+        if (direction != Vector3.left) desired = Vector2.right;
     }
 }
