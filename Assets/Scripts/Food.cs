@@ -5,10 +5,12 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public BoxCollider2D gridArea;
+    public Color color;
 
     private void Start()
     {
         RandomizePosition();
+        this.transform.GetComponent<SpriteRenderer>().color = color;
     }
 
     private void RandomizePosition()
@@ -26,7 +28,6 @@ public class Food : MonoBehaviour
         if (collision.tag == "Player")
         {
             RandomizePosition();
-            GameManager.Instance.SpeedUp();
         }
     }
 }

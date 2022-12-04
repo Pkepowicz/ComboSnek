@@ -10,11 +10,17 @@ public class Snek : MonoBehaviour
     private Vector3 desired = Vector2.up;
     private List<Transform> segments;
     public Transform segmentPrefab;
+    private Color currentColor;
+    private Color[] colors = new Color[3];
 
     private void Start()
     {
         segments = new List<Transform>();
         segments.Add(this.transform);
+        colors[0] = Color.red;
+        colors[1] = Color.blue;
+        colors[2] = Color.green;
+        randomizeColor();
     }
 
     // Update is called once per frame
@@ -59,6 +65,12 @@ public class Snek : MonoBehaviour
         if (collision.tag == "Food")
         {
             Grow();
+            if (collision.transform.GetComponent<Food>().color == this.currentColor)
+            {
+                GameManager.Instance.SpeedUp();
+                randomizeColor();
+            }
+            else GameManager.Instance.SpeedDown();
         }
         if (collision.tag == "Obstacle")
         {
@@ -72,6 +84,12 @@ public class Snek : MonoBehaviour
         segment.position = segments[segments.Count - 1].position;
         segment.localScale = transform.lossyScale;
         segments.Add(segment);  
+    }
+
+    private void randomizeColor()
+    {
+        currentColor = colors[Random.Range(0, 2)];
+        this.transform.GetComponent<SpriteRenderer>().color = currentColor;
     }
 
     private void GameOver()
