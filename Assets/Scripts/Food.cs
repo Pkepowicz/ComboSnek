@@ -26,6 +26,7 @@ public class Food : MonoBehaviour
         if (collision.tag == "Player")
         {
             RandomizePosition();
+            GameManager.Instance.SpeedUp();
         }
     }
 }
