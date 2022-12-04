@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private int maxSpeedLevel = 10;
-    private int currentSpeedLevel = 0;
+    private int currentSpeedLevel = 1;
     
     private void Awake()
     {
@@ -16,17 +16,19 @@ public class GameManager : MonoBehaviour
 
     public void SpeedUp()
     {
-        if(currentSpeedLevel <= maxSpeedLevel)
+        if(currentSpeedLevel < maxSpeedLevel)
         {
             Time.timeScale += 0.4f;
+            currentSpeedLevel += 1;
         }
     }
 
     public void SpeedDown()
     {
-        if (currentSpeedLevel >= -1)
+        if (currentSpeedLevel > 0)
         {
             Time.timeScale -= 0.4f;
+            currentSpeedLevel -= 1;
         }
     }
 

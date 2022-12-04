@@ -88,7 +88,7 @@ public class Snek : MonoBehaviour
 
     private void randomizeColor()
     {
-        currentColor = colors[Random.Range(0, 2)];
+        currentColor = colors[Random.Range(0, 3)];
         this.transform.GetComponent<SpriteRenderer>().color = currentColor;
     }
 
