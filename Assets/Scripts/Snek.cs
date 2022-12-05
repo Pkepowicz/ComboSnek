@@ -65,6 +65,7 @@ public class Snek : MonoBehaviour
     {
         if (collision.tag == "Food")
         {
+            GameManager.Instance.AddPoints(1);
             Grow();
             if (collision.transform.GetComponent<Food>().color == this.currentColor)
             {
@@ -75,7 +76,14 @@ public class Snek : MonoBehaviour
         }
         if (collision.tag == "Obstacle")
         {
-            GameOver();
+            foreach (Transform segment in segments)
+            {
+                Destroy(segment.gameObject);
+            }
+            //GameOver();
+            GameManager.Instance.GameOver();
+            
+
         }
     }
 
@@ -93,11 +101,11 @@ public class Snek : MonoBehaviour
         this.transform.GetComponent<SpriteRenderer>().color = currentColor;
     }
 
-    private void GameOver()
+    /*private void GameOver()
     {
         transform.position = new Vector3(-100, -100, -100);
         Time.timeScale = 0;
-    }
+    }*/
 
     public void Up()
     {

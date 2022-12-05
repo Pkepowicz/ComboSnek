@@ -5,16 +5,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public PanelManager panelManager;
 
     [SerializeField] private int maxSpeedLevel = 10;
     private int currentSpeedLevel = 1;
+    public int score = 0;
     
     private void Awake()
     {
         Instance = this;
     }
 
-    
+    public void AddPoints(int points)
+    {
+        score += points;
+        panelManager.UpdateScore(score);
+    }
 
     public void SpeedUp()
     {
@@ -34,4 +40,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        panelManager.GameOver();
+    }
+    
 }
