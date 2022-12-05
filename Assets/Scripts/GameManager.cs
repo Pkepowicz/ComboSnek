@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxSpeedLevel = 10;
     [SerializeField] private float speedStep = 0.6f;
     private int currentSpeedLevel = 1;
-    public float timeLeft;
+    public float timeLeft = 60f;
     private bool timeFlows = true;
 
     public int score = 0;
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 Debug.Log("Here ending screen UwU");
+                GameOver();
                 timeLeft = 0;
             }
         }

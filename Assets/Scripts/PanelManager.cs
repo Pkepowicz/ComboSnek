@@ -12,6 +12,7 @@ public class PanelManager : MonoBehaviour
     public GameObject gameOverScreen;
     public TMP_Text scoreText;
     public TMP_Text gameOverScore;
+    public TMP_Text timeRemaining;
 
     private float currentTimeScale;
 
@@ -72,6 +73,11 @@ public class PanelManager : MonoBehaviour
     public void UpdateScore(int score)
     {
         scoreText.text = "Score " + score;
+    }
+
+    public void UpdateTime(float time)
+    {
+        timeRemaining.text = time.ToString();
     }
 
     public void QuitToMenu()
