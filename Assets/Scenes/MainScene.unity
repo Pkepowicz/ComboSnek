@@ -353,7 +353,7 @@ RectTransform:
   - {fileID: 485305723}
   - {fileID: 1871351449}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -444,13 +444,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1709881223}
+        m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
+        m_MethodName: QuitToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -618,7 +618,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242640034
 GameObject:
@@ -650,7 +650,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2063933164}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -881,7 +881,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &445977269
 MonoBehaviour:
@@ -1566,7 +1566,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782920646
 GameObject:
@@ -1710,7 +1710,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856909853
 GameObject:
@@ -2794,8 +2794,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c9fbd16ee520f4bb7324f41582405a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimerText: {fileID: 2078061570}
   panelManager: {fileID: 1709881223}
   maxSpeedLevel: 4
+  speedStep: 0.6
+  timeLeft: 60
   score: 0
 --- !u!4 &1615459710
 Transform:
@@ -2810,7 +2813,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1626754423
 GameObject:
@@ -3085,6 +3088,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 856909853}
   scoreText: {fileID: 2086997194}
   gameOverScore: {fileID: 2000939784}
+  timeRemaining: {fileID: 0}
 --- !u!4 &1709881224
 Transform:
   m_ObjectHideFlags: 0
@@ -3531,7 +3535,7 @@ Transform:
   - {fileID: 1769278016}
   - {fileID: 886836485}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1999632082
 BoxCollider2D:
@@ -3840,8 +3844,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.4395, y: -0.000049591}
-  m_SizeDelta: {x: 11.04, y: 3.0988}
+  m_AnchoredPosition: {x: -10.9529, y: -0.000049591}
+  m_SizeDelta: {x: 6.0131, y: 3.0988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078061570
 MonoBehaviour:
@@ -3975,8 +3979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 5.52, y: -1.5494992}
-  m_SizeDelta: {x: 16.879, y: 3.0988}
+  m_AnchoredPosition: {x: 3.0066, y: -1.5494992}
+  m_SizeDelta: {x: 21.906, y: 3.0988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086997194
 MonoBehaviour:
@@ -4308,7 +4312,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2106322932
 BoxCollider2D:
@@ -4532,7 +4536,7 @@ Transform:
   m_Children:
   - {fileID: 3631003350846640165}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8722306593712762366
 MonoBehaviour:
@@ -4548,6 +4552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 8386236327041398017}
   segmentPrefab: {fileID: 6581288504497151679, guid: 5c1916b0a23bbb144a3ad1d1d0400d85, type: 3}
+  foodEatenEffect: {fileID: 6656215274104462608, guid: a6083a9c8975a6d4f8f93bcca6cd3354, type: 3}
 --- !u!50 &8722306593712762367
 Rigidbody2D:
   serializedVersion: 4

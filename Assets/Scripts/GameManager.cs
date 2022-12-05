@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour
         }
 }
 
+    public float TimeModification()
+    {
+        return 1 + currentSpeedLevel * speedStep;
+    }
+
 
     public void SpeedUp()
     {
