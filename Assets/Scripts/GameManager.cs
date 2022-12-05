@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    [SerializeField] private TMP_Text TimerText;
     [SerializeField] private int maxSpeedLevel = 10;
+    [SerializeField] private float speedStep = 0.6f;
     private int currentSpeedLevel = 1;
-    
+    public float TimeLeft;
+
     private void Awake()
     {
         Instance = this;
@@ -28,13 +31,24 @@ public class GameManager : MonoBehaviour
                 Application.Quit();
             }
         }
+
+        if (TimeLeft > 0)
+        {
+            TimeLeft -= Time.unscaledDeltaTime;
+            UpdateTimer(TimeLeft);
+        }
+        else
+        {
+            Debug.Log("Here ending screen UwU");
+            TimeLeft = 0;
+        }
     }
 
     public void SpeedUp()
     {
         if(currentSpeedLevel < maxSpeedLevel)
         {
-            Time.timeScale += 0.4f;
+            Time.timeScale += speedStep;
             currentSpeedLevel += 1;
         }
     }
@@ -43,9 +57,17 @@ public class GameManager : MonoBehaviour
     {
         if (currentSpeedLevel > 0)
         {
-            Time.timeScale -= 0.4f;
+            Time.timeScale -= speedStep;
             currentSpeedLevel -= 1;
         }
     }
 
+    private void UpdateTimer(float currentTime)
+    {
+        currentTime += 1;
+
+        float seconds = Mathf.FloorToInt(currentTime);
+
+        TimerText.text = seconds.ToString();
+    }
 }
