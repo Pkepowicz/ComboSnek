@@ -7,32 +7,27 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField] private TMP_Text TimerText;
+    public PanelManager panelManager;
+
     [SerializeField] private int maxSpeedLevel = 10;
     [SerializeField] private float speedStep = 0.6f;
     private int currentSpeedLevel = 1;
     public float timeLeft;
     private bool timeFlows = true;
 
+    public int score = 0;
+    
     private void Awake()
     {
         Instance = this;
     }
-    
-    private void Update()
+    public void AddPoints(int points)
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            if (Application.platform == RuntimePlatform.Android)
-            {
-                AndroidJavaObject activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
-                activity.Call<bool>("moveTaskToBack", true);
-            }
-            else
-            {
-                Application.Quit();
-            }
-        }
-
+        score += points;
+        panelManager.UpdateScore(score);
+    }
+    private void Update()
+{
         if (timeFlows)
         {
             if (timeLeft > 0)
@@ -46,7 +41,8 @@ public class GameManager : MonoBehaviour
                 timeLeft = 0;
             }
         }
-    }
+}
+
 
     public void SpeedUp()
     {
@@ -66,6 +62,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        panelManager.GameOver();
+    }
+    
     public void AddTime()
     {
         this.timeLeft += 1 * this.currentSpeedLevel;
