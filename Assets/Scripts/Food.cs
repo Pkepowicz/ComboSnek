@@ -6,11 +6,13 @@ public class Food : MonoBehaviour
 {
     public BoxCollider2D gridArea;
     public Color color;
+    private AudioSource sound;
 
     private void Start()
     {
         RandomizePosition();
-        this.transform.GetComponent<SpriteRenderer>().color = color;
+        //this.transform.GetComponent<SpriteRenderer>().color = color;
+        sound = this.transform.GetComponent<AudioSource>();
     }
 
     private void RandomizePosition()
@@ -27,6 +29,7 @@ public class Food : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            sound.Play();
             RandomizePosition();
         }
     }
