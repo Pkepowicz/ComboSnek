@@ -21,6 +21,7 @@ public class Snek : MonoBehaviour
         colors[1] = Color.blue;
         colors[2] = Color.green;
         randomizeColor();
+        Debug.Log(direction);
     }
 
     // Update is called once per frame
