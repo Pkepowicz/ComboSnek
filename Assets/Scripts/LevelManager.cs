@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+            this.transform.GetComponent<AudioSource>().Play();
         }
     }
     
