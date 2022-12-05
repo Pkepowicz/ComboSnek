@@ -68,6 +68,7 @@ public class Snek : MonoBehaviour
             if (collision.transform.GetComponent<Food>().color == this.currentColor)
             {
                 GameManager.Instance.SpeedUp();
+                GameManager.Instance.AddTime();
                 randomizeColor();
             }
             else GameManager.Instance.SpeedDown();

@@ -10,13 +10,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxSpeedLevel = 10;
     [SerializeField] private float speedStep = 0.6f;
     private int currentSpeedLevel = 1;
-    public float TimeLeft;
+    public float timeLeft;
+    private bool timeFlows = true;
 
     private void Awake()
     {
         Instance = this;
     }
-
+    
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -32,15 +33,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (TimeLeft > 0)
+        if (timeFlows)
         {
-            TimeLeft -= Time.unscaledDeltaTime;
-            UpdateTimer(TimeLeft);
-        }
-        else
-        {
-            Debug.Log("Here ending screen UwU");
-            TimeLeft = 0;
+            if (timeLeft > 0)
+            {
+                timeLeft -= Time.unscaledDeltaTime;
+                UpdateTimer(timeLeft);
+            }
+            else
+            {
+                Debug.Log("Here ending screen UwU");
+                timeLeft = 0;
+            }
         }
     }
 
@@ -60,6 +64,11 @@ public class GameManager : MonoBehaviour
             Time.timeScale -= speedStep;
             currentSpeedLevel -= 1;
         }
+    }
+
+    public void AddTime()
+    {
+        this.timeLeft += 1 * this.currentSpeedLevel;
     }
 
     private void UpdateTimer(float currentTime)
