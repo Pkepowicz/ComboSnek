@@ -10,11 +10,17 @@ public class Snek : MonoBehaviour
     private Vector3 desired = Vector2.up;
     private List<Transform> segments;
     public Transform segmentPrefab;
+    private Color currentColor;
+    private Color[] colors = new Color[3];
 
     private void Start()
     {
         segments = new List<Transform>();
         segments.Add(this.transform);
+        colors[0] = Color.red;
+        colors[1] = Color.blue;
+        colors[2] = Color.green;
+        randomizeColor();
     }
 
     // Update is called once per frame
@@ -51,7 +57,7 @@ public class Snek : MonoBehaviour
 
     private void Move()
     {
-        transform.position = transform.position + (direction * rend.bounds.size.x);
+        transform.position = transform.position + direction;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,6 +65,12 @@ public class Snek : MonoBehaviour
         if (collision.tag == "Food")
         {
             Grow();
+            if (collision.transform.GetComponent<Food>().color == this.currentColor)
+            {
+                GameManager.Instance.SpeedUp();
+                randomizeColor();
+            }
+            else GameManager.Instance.SpeedDown();
         }
         if (collision.tag == "Obstacle")
         {
@@ -74,6 +86,12 @@ public class Snek : MonoBehaviour
         segments.Add(segment);  
     }
 
+    private void randomizeColor()
+    {
+        currentColor = colors[Random.Range(0, 3)];
+        this.transform.GetComponent<SpriteRenderer>().color = currentColor;
+    }
+
     private void GameOver()
     {
         transform.position = new Vector3(-100, -100, -100);
@@ -83,20 +101,24 @@ public class Snek : MonoBehaviour
     public void Up()
     {
         if (direction != Vector3.down) desired = Vector2.up;
+        Handheld.Vibrate();
     }
 
     public void Down()
     {
         if (direction != Vector3.up) desired = Vector2.down;
+        Handheld.Vibrate();
     }    
 
     public void Left()
     {
         if (direction != Vector3.right) desired = Vector2.left;
+        Handheld.Vibrate();
     }
 
     public void Right()
     {
         if (direction != Vector3.left) desired = Vector2.right;
+        Handheld.Vibrate();
     }
 }
