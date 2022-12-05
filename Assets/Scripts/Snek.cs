@@ -12,6 +12,7 @@ public class Snek : MonoBehaviour
     public Transform segmentPrefab;
     private Color currentColor;
     private Color[] colors = new Color[3];
+    public GameObject foodEatenEffect;
 
     private void Start()
     {
@@ -65,9 +66,16 @@ public class Snek : MonoBehaviour
     {
         if (collision.tag == "Food")
         {
+            Color foodColor = collision.transform.GetComponent<Food>().color;
             GameManager.Instance.AddPoints(1);
+            /*GameObject currentEffect = Instantiate(foodEatenEffect, transform.position, Quaternion.identity);
+            Debug.Log(currentEffect.transform.position);
+            var main = currentEffect.GetComponent<ParticleSystem>().main;
+            main.startColor = foodColor;
+            main.startLifetimeMultiplier = GameManager.Instance.TimeModification();
+            */
             Grow();
-            if (collision.transform.GetComponent<Food>().color == this.currentColor)
+            if (foodColor == this.currentColor)
             {
                 GameManager.Instance.SpeedUp();
                 GameManager.Instance.AddTime();
