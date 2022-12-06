@@ -12,7 +12,7 @@ public class PanelManager : MonoBehaviour
     public GameObject gameOverScreen;
     public TMP_Text scoreText;
     public TMP_Text gameOverScore;
-    public TMP_Text timeRemaining;
+    //public TMP_Text timeRemaining;
     public GameObject newHighScore;
 
     private float currentTimeScale;
@@ -23,7 +23,7 @@ public class PanelManager : MonoBehaviour
         {
             if (Application.platform == RuntimePlatform.Android)
             {
-                if (!GameIsPaused)
+                if (GameIsPaused)
                 {
                     Resume();
                 }
@@ -49,10 +49,12 @@ public class PanelManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = currentTimeScale;
         GameIsPaused = false;
+        GameManager.Instance.timeFlows = true;
     }
 
     public void Pause()
     {
+        GameManager.Instance.timeFlows = false;
         currentTimeScale = Time.timeScale;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -61,6 +63,7 @@ public class PanelManager : MonoBehaviour
 
     public void GameOver()
     {
+        GameManager.Instance.timeFlows = false;
         gameOverScreen.SetActive(true);
         gameOverScore.text = GameManager.Instance.score.ToString();
         if (GameManager.Instance.score > LevelManager.Instance.highscore)
@@ -83,7 +86,7 @@ public class PanelManager : MonoBehaviour
 
     public void UpdateTime(float time)
     {
-        timeRemaining.text = time.ToString();
+        //timeRemaining.text = time.ToString();
     }
 
     public void QuitToMenu()

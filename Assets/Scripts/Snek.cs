@@ -67,13 +67,6 @@ public class Snek : MonoBehaviour
         if (collision.tag == "Food")
         {
             Color foodColor = collision.transform.GetComponent<Food>().color;
-            
-            /*GameObject currentEffect = Instantiate(foodEatenEffect, transform.position, Quaternion.identity);
-            Debug.Log(currentEffect.transform.position);
-            var main = currentEffect.GetComponent<ParticleSystem>().main;
-            main.startColor = foodColor;
-            main.startLifetimeMultiplier = GameManager.Instance.TimeModification();
-            */
             Grow();
             if (foodColor == this.currentColor)
             {
@@ -94,7 +87,6 @@ public class Snek : MonoBehaviour
             {
                 Destroy(segment.gameObject);
             }
-            //GameOver();
             GameManager.Instance.GameOver();
             
 
@@ -114,12 +106,6 @@ public class Snek : MonoBehaviour
         currentColor = colors[Random.Range(0, 3)];
         this.transform.GetComponent<SpriteRenderer>().color = currentColor;
     }
-
-    /*private void GameOver()
-    {
-        transform.position = new Vector3(-100, -100, -100);
-        Time.timeScale = 0;
-    }*/
 
     public void Up()
     {

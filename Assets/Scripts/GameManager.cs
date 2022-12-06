@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float speedStep = 0.6f;
     private int currentSpeedLevel = 1;
     public float timeLeft = 60f;
-    private bool timeFlows = true;
+    public bool timeFlows = true;
 
     public int score = 0;
     
