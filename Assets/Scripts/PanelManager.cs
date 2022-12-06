@@ -32,7 +32,6 @@ public class PanelManager : MonoBehaviour
                     Pause();
                 }
             }
-            // just for testing on computer
         }
     }
 
