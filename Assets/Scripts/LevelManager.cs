@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+    public int highscore = 0;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -17,7 +18,13 @@ public class LevelManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
             this.transform.GetComponent<AudioSource>().Play();
+            highscore = PlayerPrefs.GetInt("highscore");
         }
+    }
+
+    public void UpdateHighscore(int score)
+    {
+        PlayerPrefs.SetInt("highscore", score);
     }
     
     private void Update()

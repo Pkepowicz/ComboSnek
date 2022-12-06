@@ -67,7 +67,7 @@ public class Snek : MonoBehaviour
         if (collision.tag == "Food")
         {
             Color foodColor = collision.transform.GetComponent<Food>().color;
-            GameManager.Instance.AddPoints(1);
+            
             /*GameObject currentEffect = Instantiate(foodEatenEffect, transform.position, Quaternion.identity);
             Debug.Log(currentEffect.transform.position);
             var main = currentEffect.GetComponent<ParticleSystem>().main;
@@ -79,9 +79,14 @@ public class Snek : MonoBehaviour
             {
                 GameManager.Instance.SpeedUp();
                 GameManager.Instance.AddTime();
+                GameManager.Instance.AddPoints(5);
                 randomizeColor();
             }
-            else GameManager.Instance.SpeedDown();
+            else
+            {
+                GameManager.Instance.SpeedDown();
+                GameManager.Instance.AddPoints(2);
+            }
         }
         if (collision.tag == "Obstacle")
         {

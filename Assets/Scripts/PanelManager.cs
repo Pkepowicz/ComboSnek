@@ -13,6 +13,7 @@ public class PanelManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text gameOverScore;
     public TMP_Text timeRemaining;
+    public GameObject newHighScore;
 
     private float currentTimeScale;
 
@@ -62,11 +63,16 @@ public class PanelManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         gameOverScore.text = GameManager.Instance.score.ToString();
-
+        if (GameManager.Instance.score > LevelManager.Instance.highscore)
+        {
+            newHighScore.SetActive(true);
+            LevelManager.Instance.UpdateHighscore(GameManager.Instance.score);
+        }
     }
 
     public void Restart()
     {
+        newHighScore.SetActive(false);
         LevelManager.Instance.LoadGame();
     }
 
@@ -82,6 +88,7 @@ public class PanelManager : MonoBehaviour
 
     public void QuitToMenu()
     {
+        newHighScore.SetActive(false);
         LevelManager.Instance.LoadMenu();
     }
 }
