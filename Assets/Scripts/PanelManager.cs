@@ -33,14 +33,6 @@ public class PanelManager : MonoBehaviour
                 }
             }
             // just for testing on computer
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
         }
     }
 
