@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Vibration.Vibrate(200);
         Time.timeScale = 0;
         panelManager.GameOver();
     }
