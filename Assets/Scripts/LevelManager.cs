@@ -33,12 +33,12 @@ public class LevelManager : MonoBehaviour
         {
             if (Application.platform == RuntimePlatform.Android)
             {
-                AndroidJavaObject activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
-                activity.Call<bool>("moveTaskToBack", true);
-            }
-            else
-            {
-                Application.Quit();
+                if(SceneManager.GetActiveScene().name == "MainMenu")
+                {
+                    Application.Quit();
+                }
+                //AndroidJavaObject activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+                //activity.Call<bool>("moveTaskToBack", true);
             }
         }
     }
