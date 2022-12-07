@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Vibration.Vibrate(200);
+        Handheld.Vibrate();
         sound.Play();
         Camera.main.backgroundColor = Color.black;
         Time.timeScale = 0;
