@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Here ending screen UwU");
                 GameOver();
                 timeLeft = 0;
             }

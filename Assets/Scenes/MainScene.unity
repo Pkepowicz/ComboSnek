@@ -1807,6 +1807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f629f25a97a794c812517e22d3a60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highscore: 0
 --- !u!4 &692270691
 Transform:
   m_ObjectHideFlags: 0
@@ -3365,6 +3366,7 @@ MonoBehaviour:
   maxSpeedLevel: 4
   speedStep: 0.6
   timeLeft: 60
+  timeFlows: 1
   score: 0
 --- !u!4 &1615459710
 Transform:
@@ -3662,11 +3664,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0bc1fcb5eab8294bbf7b27c6c95ee65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 326389169}
+  pauseMenu: {fileID: 1533066914}
   gameOverScreen: {fileID: 856909853}
   scoreText: {fileID: 2086997194}
   gameOverScore: {fileID: 2000939784}
-  timeRemaining: {fileID: 2078061570}
   newHighScore: {fileID: 2070148834}
 --- !u!4 &1709881224
 Transform:

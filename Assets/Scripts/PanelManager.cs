@@ -21,16 +21,13 @@ public class PanelManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (Application.platform == RuntimePlatform.Android)
+            if (GameIsPaused)
             {
-                if (GameIsPaused)
-                {
-                    Resume();
-                }
-                else
-                {
-                    Pause();
-                }
+                Resume();
+            }
+            else
+            {
+                Pause();
             }
         }
     }
