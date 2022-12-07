@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
         Vibration.Vibrate(200);
         sound.Play();
+        Camera.main.backgroundColor = Color.black;
         Time.timeScale = 0;
         panelManager.GameOver();
     }
