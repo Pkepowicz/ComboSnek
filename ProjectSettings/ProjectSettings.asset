@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: AGH Code Industry
+  companyName: "Zesp\xF3\u0142 R"
   productName: Combo Snek
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
