@@ -13,8 +13,10 @@ public class MainMenu : MonoBehaviour
     {
         
         highscore.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
-        optionsMenu.SetVolume(PlayerPrefs.GetFloat("volume"));
-        optionsMenu.SetSliderValue(PlayerPrefs.GetFloat("volume"));
+        optionsMenu.SetMusic(PlayerPrefs.GetFloat("MusicVolume"));
+        optionsMenu.SetSFX(PlayerPrefs.GetFloat("SFXVolume"));
+        optionsMenu.SetSliderValue(PlayerPrefs.GetFloat("MusicVolume"), 
+        PlayerPrefs.GetFloat("SFXVolume"));
     }
 
     public void PlayGame()
