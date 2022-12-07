@@ -12,7 +12,7 @@ public class Snek : MonoBehaviour
     public Transform segmentPrefab;
     private Color currentColor;
     private Color[] colors = new Color[3];
-    
+
 
     private void Start()
     {
@@ -23,6 +23,7 @@ public class Snek : MonoBehaviour
         colors[2] = Color.green;
         randomizeColor();
         Debug.Log(direction);
+
     }
 
     // Update is called once per frame
