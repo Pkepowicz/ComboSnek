@@ -31,15 +31,12 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (Application.platform == RuntimePlatform.Android)
-            {
-                AndroidJavaObject activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
-                activity.Call<bool>("moveTaskToBack", true);
-            }
-            else
+            if(SceneManager.GetActiveScene().name == "MainMenu")
             {
                 Application.Quit();
             }
+                //AndroidJavaObject activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+                //activity.Call<bool>("moveTaskToBack", true);
         }
     }
 
@@ -52,6 +49,6 @@ public class LevelManager : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        
+        Time.timeScale = 1;
     }
 }

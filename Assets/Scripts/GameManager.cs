@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float speedStep = 0.6f;
     private int currentSpeedLevel = 1;
     public float timeLeft = 60f;
-    private bool timeFlows = true;
+    public bool timeFlows = true;
 
     public int score = 0;
     
@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Here ending screen UwU");
                 GameOver();
                 timeLeft = 0;
             }
@@ -70,6 +69,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Vibration.Vibrate(200);
         Time.timeScale = 0;
         panelManager.GameOver();
     }
