@@ -8,7 +8,13 @@ public class OptionsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Slider volumeSlider;
-    
+    public LevelManager lvlman;
+
+    private void Start()
+    {
+        lvlman = LevelManager.Instance;
+    }
+
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
