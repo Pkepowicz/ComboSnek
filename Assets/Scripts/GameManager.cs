@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [SerializeField] private TMP_Text TimerText;
     public PanelManager panelManager;
+    private AudioSource sound;
 
     [SerializeField] private int maxSpeedLevel = 10;
     [SerializeField] private float speedStep = 0.6f;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        sound = this.transform.GetComponent<AudioSource>();
     }
     public void AddPoints(int points)
     {
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Vibration.Vibrate(200);
+        sound.Play();
         Time.timeScale = 0;
         panelManager.GameOver();
     }
