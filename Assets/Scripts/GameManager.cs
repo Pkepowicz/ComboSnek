@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     
     public void AddTime()
     {
-        this.timeLeft += 1 * this.currentSpeedLevel;
+        this.timeLeft += 0.7f * this.currentSpeedLevel;
     }
 
     private void UpdateTimer(float currentTime)
