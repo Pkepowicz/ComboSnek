@@ -7,7 +7,7 @@ using TMPro;
 
 public class PanelManager : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
     public TMP_Text scoreText;

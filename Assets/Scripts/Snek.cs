@@ -12,7 +12,7 @@ public class Snek : MonoBehaviour
     public Transform segmentPrefab;
     private Color currentColor;
     private Color[] colors = new Color[3];
-    public GameObject foodEatenEffect;
+    
 
     private void Start()
     {
