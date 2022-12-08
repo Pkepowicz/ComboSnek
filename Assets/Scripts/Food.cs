@@ -25,14 +25,17 @@ public class Food : MonoBehaviour
             i += 1;
             x = Random.Range(-11, 11);
             y = Random.Range(-6, 20);
-            if(!Physics2D.OverlapCircle(new Vector2(x, y), 0.8f)) break;
+            if (!Physics2D.OverlapCircle(new Vector2(x, y), 0.8f))
+            {
+                transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
+                break;
+            }
             if (i > 15)
             {
                 transform.position = new Vector3(-200, -200, -200);
                 break;
             }
         }
-        transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
