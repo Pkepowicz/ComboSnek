@@ -3708,7 +3708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerText: {fileID: 2078061570}
   panelManager: {fileID: 1709881223}
-  maxSpeedLevel: 10
+  maxSpeedLevel: 8
   speedStep: 0.4
   timeLeft: 40
   timeFlows: 1
