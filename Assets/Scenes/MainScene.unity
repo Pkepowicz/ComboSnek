@@ -3708,6 +3708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerText: {fileID: 2078061570}
   panelManager: {fileID: 1709881223}
+  snake: {fileID: 8722306593712762366}
   maxSpeedLevel: 8
   speedStep: 0.4
   timeLeft: 40
