@@ -25,7 +25,7 @@ public class Food : MonoBehaviour
             i += 1;
             x = Random.Range(bounds.min.x, bounds.max.x);
             y = Random.Range(bounds.min.y, bounds.max.x);
-            if(!Physics.CheckSphere(new Vector3(x, y, 0), 1f)) break;
+            if(!Physics2D.OverlapCircle(new Vector2(x, y), 1f)) break;
             if (i > 15)
             {
                 transform.position = new Vector3(-200, -200, -200);
