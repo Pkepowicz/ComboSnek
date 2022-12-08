@@ -85,14 +85,18 @@ public class Snek : MonoBehaviour
         if (collision.tag == "Obstacle")
         {
             GameManager.Instance.GameOver();
-            foreach (Transform segment in segments)
-            {
-                Destroy(segment.gameObject);
-            }
 
         }
     }
 
+    public void DeleteSnake()
+    {
+        foreach (Transform segment in segments)
+        {
+            Destroy(segment.gameObject);
+        }
+    }
+    
     private void Grow()
     {
         Transform segment = Instantiate(segmentPrefab);

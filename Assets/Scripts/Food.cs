@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    public BoxCollider2D gridArea;
+    //public BoxCollider2D gridArea;
     public Color color;
     private AudioSource sound;
 
@@ -17,22 +17,25 @@ public class Food : MonoBehaviour
 
     private void RandomizePosition()
     {
-        Bounds bounds = gridArea.bounds;
+        //Bounds bounds = gridArea.bounds;
         float x, y;
         int i = 0;
         while (true)
         {
             i += 1;
-            x = Random.Range(bounds.min.x, bounds.max.x);
-            y = Random.Range(bounds.min.y, bounds.max.x);
-            if(!Physics.CheckSphere(new Vector3(x, y, 0), 1f)) break;
-            if (i > 15)
+            x = Random.Range(-11, 11);
+            y = Random.Range(-6, 20);
+            if (!Physics2D.OverlapCircle(new Vector2(x, y), 0.8f))
+            {
+                transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
+                break;
+            }
+            if (i > 45)
             {
                 transform.position = new Vector3(-200, -200, -200);
                 break;
             }
         }
-        transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

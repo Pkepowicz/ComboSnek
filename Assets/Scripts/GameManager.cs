@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text TimerText;
     public PanelManager panelManager;
     private AudioSource sound;
+    public Snek snake;
 
     [SerializeField] private int maxSpeedLevel = 10;
     [SerializeField] private float speedStep = 0.6f;
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
         Handheld.Vibrate();
         sound.Play();
         Camera.main.backgroundColor = Color.black;
+        snake.DeleteSnake();
         Time.timeScale = 0;
         panelManager.GameOver();
     }
