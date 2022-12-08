@@ -30,7 +30,7 @@ public class Food : MonoBehaviour
                 transform.position = new Vector3(Mathf.Round(x), Mathf.Round(y), 0.0f);
                 break;
             }
-            if (i > 15)
+            if (i > 45)
             {
                 transform.position = new Vector3(-200, -200, -200);
                 break;
