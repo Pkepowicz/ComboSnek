@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
     public void UpdateHighscore(int score)
     {
         PlayerPrefs.SetInt("highscore", score);
+        highscore = score;
     }
     
     private void Update()
