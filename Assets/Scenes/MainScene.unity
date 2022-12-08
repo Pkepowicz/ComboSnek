@@ -2509,7 +2509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &856909854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3708,9 +3708,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerText: {fileID: 2078061570}
   panelManager: {fileID: 1709881223}
-  maxSpeedLevel: 4
-  speedStep: 0.6
-  timeLeft: 60
+  maxSpeedLevel: 10
+  speedStep: 0.4
+  timeLeft: 40
   timeFlows: 1
   score: 0
 --- !u!4 &1615459710
