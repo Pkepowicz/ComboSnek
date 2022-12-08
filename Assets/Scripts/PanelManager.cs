@@ -56,6 +56,7 @@ public class PanelManager : MonoBehaviour
         gameOverScore.text = GameManager.Instance.score.ToString();
         if (GameManager.Instance.score > LevelManager.Instance.highscore)
         {
+            Debug.Log(GameManager.Instance.score + " highscore: " + LevelManager.Instance.highscore);
             newHighScore.SetActive(true);
             LevelManager.Instance.UpdateHighscore(GameManager.Instance.score);
         }
