@@ -23,7 +23,7 @@ public class Snek : MonoBehaviour
         colors[2] = Color.green;
         randomizeColor();
         Debug.Log(direction);
-
+        StartCoroutine(Move());
     }
 
     // Update is called once per frame
@@ -47,20 +47,18 @@ public class Snek : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private IEnumerator Move()
     {
-        for(int i = segments.Count - 1; i > 0; i--)
+        while (true)
         {
-            segments[i].position = segments[i - 1].position;
+            yield return new WaitForSeconds(GameManager.Instance.currentSpeed);
+            for (int i = segments.Count - 1; i > 0; i--)
+            {
+                segments[i].position = segments[i - 1].position;
+            }
+            transform.position = transform.position + direction;
+            direction = desired;
         }
-
-        direction = desired;
-        Move();
-    }
-
-    private void Move()
-    {
-        transform.position = transform.position + direction;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

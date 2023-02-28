@@ -12,8 +12,9 @@ public class GameManager : MonoBehaviour
     public Snek snake;
 
     [SerializeField] private int maxSpeedLevel = 10;
-    [SerializeField] private float speedStep = 0.6f;
+    [SerializeField] private float speedStep = 0.06f;
     private int currentSpeedLevel = 1;
+    public float currentSpeed = 0.5f;
     public float timeLeft = 60f;
     public bool timeFlows = true;
 
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         if(currentSpeedLevel < maxSpeedLevel)
         {
-            Time.timeScale += speedStep;
+            currentSpeed -= speedStep;
             currentSpeedLevel += 1;
         }
     }
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentSpeedLevel > 0)
         {
-            Time.timeScale -= speedStep;
+            currentSpeed += speedStep;
             currentSpeedLevel -= 1;
         }
     }
