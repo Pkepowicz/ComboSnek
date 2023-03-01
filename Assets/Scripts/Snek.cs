@@ -18,6 +18,7 @@ public class Snek : MonoBehaviour
     {
         segments = new List<Transform>();
         segments.Add(this.transform);
+        segments.Add(GameObject.FindWithTag("Player").transform);
         colors[0] = Color.red;
         colors[1] = Color.blue;
         colors[2] = Color.green;
@@ -51,18 +52,19 @@ public class Snek : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(GameManager.Instance.currentSpeed);
             for (int i = segments.Count - 1; i > 0; i--)
             {
                 segments[i].position = segments[i - 1].position;
             }
-            transform.position = transform.position + direction;
             direction = desired;
+            transform.position = transform.position + direction;
+            yield return new WaitForSeconds(GameManager.Instance.currentSpeed);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.tag);
         if (collision.tag == "Food")
         {
             Color foodColor = collision.transform.GetComponent<Food>().color;
