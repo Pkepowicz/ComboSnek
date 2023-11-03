@@ -4003,7 +4003,7 @@ MonoBehaviour:
   panelManager: {fileID: 1709881223}
   snake: {fileID: 8722306593712762366}
   maxSpeedLevel: 8
-  speedStep: 0.1
+  speedStep: 0.05
   currentSpeed: 0.5
   timeLeft: 40
   timeFlows: 1
@@ -6545,7 +6545,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 8386236327041398017}
-  segments: []
   segmentPrefab: {fileID: 6581288504497151679, guid: 5c1916b0a23bbb144a3ad1d1d0400d85, type: 3}
 --- !u!50 &8722306593712762367
 Rigidbody2D:
