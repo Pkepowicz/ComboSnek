@@ -4648,9 +4648,10 @@ MonoBehaviour:
   TimerText: {fileID: 2078061570}
   panelManager: {fileID: 1709881223}
   snake: {fileID: 8722306593712762366}
-  maxSpeedLevel: 8
+  maxSpeedLevel: 6
   speedStep: 0.05
-  currentSpeed: 0.5
+  timeGain: 0.4
+  currentSpeed: 0.4
   timeLeft: 40
   timeFlows: 1
   score: 0

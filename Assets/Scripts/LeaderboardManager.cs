@@ -9,14 +9,6 @@ namespace LeaderboardCreatorDemo
     public class LeaderboardManager : MonoBehaviour
     {
         [SerializeField] private TMP_Text[] _entryTextObjects;
-        [SerializeField] private TMP_InputField _usernameInputField;
-
-// Make changes to this section according to how you're storing the player's score:
-// ------------------------------------------------------------
-        [SerializeField] GameManager manager;
-
-        private int Score => manager.score;
-// ------------------------------------------------------------
 
         private void Start()
         {
@@ -38,14 +30,5 @@ namespace LeaderboardCreatorDemo
             });
         }
         
-        public void UploadEntry()
-        {
-            Leaderboards.ComboSnek.UploadNewEntry(_usernameInputField.text, Score, isSuccessful =>
-            {
-                if (isSuccessful)
-                    LoadEntries();
-                    LeaderboardCreator.ResetPlayer();
-            });
-        }
     }
 }

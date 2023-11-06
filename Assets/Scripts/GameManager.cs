@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int maxSpeedLevel = 10;
     [SerializeField] private float speedStep = 0.06f;
+    [SerializeField] private float timeGain = 0.5f;
     private int currentSpeedLevel = 1;
     public float currentSpeed = 0.5f;
     public float timeLeft = 60f;
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
     
     public void AddTime()
     {
-        this.timeLeft += 0.7f * this.currentSpeedLevel;
+        this.timeLeft += this.timeGain * this.currentSpeedLevel;
     }
 
     private void UpdateTimer(float currentTime)
