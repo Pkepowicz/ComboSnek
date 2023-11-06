@@ -14,6 +14,8 @@ public class PanelManager : MonoBehaviour
     public TMP_Text gameOverScore;
     //public TMP_Text timeRemaining;
     public GameObject newHighScore;
+    public GameObject inputField;
+    public GameObject sendButton;
 
     private float currentTimeScale;
 
@@ -57,6 +59,8 @@ public class PanelManager : MonoBehaviour
         if (GameManager.Instance.score > LevelManager.Instance.highscore)
         {
             newHighScore.SetActive(true);
+            inputField.SetActive(true);
+            sendButton.SetActive(true);
             LevelManager.Instance.UpdateHighscore(GameManager.Instance.score);
         }
     }
