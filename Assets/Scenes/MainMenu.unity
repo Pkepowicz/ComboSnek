@@ -731,7 +731,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 4. - 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
   m_sharedMaterial: {fileID: -7783483112673574445, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 3. - 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
   m_sharedMaterial: {fileID: -7783483112673574445, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
@@ -1777,7 +1777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 6. - 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
   m_sharedMaterial: {fileID: -7783483112673574445, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 7. - 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
   m_sharedMaterial: {fileID: -7783483112673574445, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
@@ -2438,7 +2438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 5. - 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
   m_sharedMaterial: {fileID: -7783483112673574445, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
@@ -2887,7 +2887,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 2. - 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
   m_sharedMaterial: {fileID: -7783483112673574445, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
@@ -4279,7 +4279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 1. - 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
   m_sharedMaterial: {fileID: -7783483112673574445, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
@@ -4549,7 +4549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 8. - 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
   m_sharedMaterial: {fileID: -7783483112673574445, guid: a46467c4bb0ac794b80dcd5626405b83, type: 2}
@@ -5133,7 +5133,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1958851207}
-  - component: {fileID: 1958851209}
   - component: {fileID: 1958851208}
   m_Layer: 5
   m_Name: Scores
@@ -5192,20 +5191,6 @@ MonoBehaviour:
   - {fileID: 573047011}
   - {fileID: 620873908}
   - {fileID: 1867228971}
---- !u!114 &1958851209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958851206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27de63f16e7552459b9060d2efc6623, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highscore: {fileID: 0}
-  optionsMenu: {fileID: 1373832936}
 --- !u!1 &2109663266
 GameObject:
   m_ObjectHideFlags: 0

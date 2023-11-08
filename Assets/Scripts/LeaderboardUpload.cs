@@ -8,8 +8,8 @@ namespace LeaderboardCreatorDemo
 {
     public class LeaderboardUpload : MonoBehaviour
     {
-        [SerializeField] private GameObject _activeText;
-        [SerializeField] private GameObject _inActiveText;
+        [SerializeField] private GameObject _saveButton;
+        [SerializeField] private GameObject _inputField;
         [SerializeField] private TMP_InputField _usernameInputField;
 
 // Make changes to this section according to how you're storing the player's score:
@@ -21,13 +21,16 @@ namespace LeaderboardCreatorDemo
         
         public void UploadEntry()
         {
-            Leaderboards.ComboSnek.UploadNewEntry(_usernameInputField.text, Score, isSuccessful =>
-            {
-                if (isSuccessful)
-                    _activeText.SetActive(false);
-                    _activeText.SetActive(true);
-                    LeaderboardCreator.ResetPlayer();
-            });
+            if (_usernameInputField.text != string.Empty) {
+                Leaderboards.ComboSnek.UploadNewEntry(_usernameInputField.text, Score, isSuccessful =>
+                {
+                    if (isSuccessful) {
+                        LeaderboardCreator.ResetPlayer();
+                        _inputField.SetActive(false);
+                        _saveButton.SetActive(false);
+                    }
+                });
+            }
         }
     }
 }

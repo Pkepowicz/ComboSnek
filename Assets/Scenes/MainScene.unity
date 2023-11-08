@@ -473,7 +473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -14.9}
+  m_AnchoredPosition: {x: 0, y: -19.19}
   m_SizeDelta: {x: 24.1524, y: 7.8853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179578527
@@ -1390,17 +1390,17 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 5
   m_InputType: 0
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 5
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 0
+  m_CharacterLimit: 10
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -3749,7 +3749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3.93}
+  m_AnchoredPosition: {x: 0, y: 0.00000023841858}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265538028
@@ -3948,22 +3948,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LeaderboardCreatorDemo.LeaderboardManager, Assembly-CSharp
+      - m_Target: {fileID: 1308703891}
+        m_TargetAssemblyTypeName: LeaderboardCreatorDemo.LeaderboardUpload, Assembly-CSharp
         m_MethodName: UploadEntry
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1308703888}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3992,8 +3980,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b997a27454323438dbfdda3ee1f726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activeText: {fileID: 1633680845}
-  _inActiveText: {fileID: 1190159543}
+  _saveButton: {fileID: 1308703885}
+  _inputField: {fileID: 417716176}
   _usernameInputField: {fileID: 417716178}
   manager: {fileID: 1615459709}
 --- !u!1 &1362980226

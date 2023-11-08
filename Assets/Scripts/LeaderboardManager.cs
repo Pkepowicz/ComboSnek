@@ -22,8 +22,8 @@ namespace LeaderboardCreatorDemo
         
             Leaderboards.ComboSnek.GetEntries(entries =>
             {
-                foreach (var t in _entryTextObjects)
-                    t.text = "";
+                //foreach (var t in _entryTextObjects)
+                //    t.text = "";
                 var length = Mathf.Min(_entryTextObjects.Length, entries.Length);
                 for (int i = 0; i < length; i++)
                     _entryTextObjects[i].text = $"{entries[i].Rank}. {entries[i].Username} - {entries[i].Score}";
