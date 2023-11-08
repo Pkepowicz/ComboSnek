@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=600 height=100%></canvas>
+      <canvas id="unity-canvas" width=600 height=800></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -56,11 +56,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/ComboSnekBuild.loader.js";
+      var loaderUrl = buildUrl + "/docs.loader.js";
       var config = {
-        dataUrl: buildUrl + "/ComboSnekBuild.data.br",
-        frameworkUrl: buildUrl + "/ComboSnekBuild.framework.js.br",
-        codeUrl: buildUrl + "/ComboSnekBuild.wasm.br",
+        dataUrl: buildUrl + "/docs.data.unityweb",
+        frameworkUrl: buildUrl + "/docs.framework.js.unityweb",
+        codeUrl: buildUrl + "/docs.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "ZTP",
         productName: "Combo Snek",
