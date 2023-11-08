@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Handheld.Vibrate();
+        //Handheld.Vibrate();
         sound.Play();
         Camera.main.backgroundColor = Color.black;
         snake.DeleteSnake();
