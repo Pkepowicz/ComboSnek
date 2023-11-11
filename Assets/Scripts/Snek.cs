@@ -9,6 +9,7 @@ public class Snek : MonoBehaviour
     private Vector3 direction = Vector2.up;
     private Vector3 desired = Vector2.up;
     private List<Transform> segments;
+    public Transform firstSegment;
     public Transform segmentPrefab;
     private Color currentColor;
     private Color[] colors = new Color[3];
@@ -18,7 +19,7 @@ public class Snek : MonoBehaviour
     {
         segments = new List<Transform>();
         segments.Add(this.transform);
-        segments.Add(GameObject.FindWithTag("Player").transform);
+        segments.Add(firstSegment);
         colors[0] = Color.red;
         colors[1] = Color.blue;
         colors[2] = Color.green;
